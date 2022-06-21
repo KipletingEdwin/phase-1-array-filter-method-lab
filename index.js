@@ -1,21 +1,23 @@
 // Code your solution here
 //declare a function that return all drivers
 
-function findMatching(driversName,details){
-    return driversName.filter(function(driversName)
-    {return driversName.toLowerCase()===details.toLowerCase()})
-
-}
-//declare a function that return driver if letters match
-
-function fuzzyMatch(driversName,details){
-    return driversName.filter(function(driversName)
-    {return driversName.toLowerCase().substring(0,details.lenght)===details.toLowerCase()})
+function findMatching(drivers, name) {
+    const driversArr = drivers.filter(
+        (match) => match.toLowerCase() === name.toLowerCase());
+    return driversArr;
 }
 
-//declare another function 
+function fuzzyMatch(drivers, name) {
+    const driversArr = drivers.filter(
+        (match) => match.toLowerCase().indexOf(name.toLowerCase()) === 0
+    )
+    return driversArr;
+}
 
-function matchName(driversName,details){
-    return driversName.filter(function (driversName) 
-    { return driversName.name === details })
+function matchName(driver, name) {
+    const driverArr = driver.filter(
+        (match) => match.name === name
+    )
+    return driverArr;
+
 }
